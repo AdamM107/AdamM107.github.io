@@ -1,0 +1,83 @@
+.App-logo {
+    margin-bottom: 5px;
+    display: inline-block;
+    height: 7vmin;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+.App-logo:hover {
+    transform: scale(1.05);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-image: url('../assets/backgnd2.png');
+    background-size: cover;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    user-select: none;
+    z-index: 1000;
+}
+
+.header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 300px; /* Adjust this height to control the fade effect */
+    background: linear-gradient(0deg, rgba(205, 205, 255, 1.9) 0%, transparent 70%);
+}
+
+.nav {
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-link {
+    display: block;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    height: auto;
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+
+
+@media screen and (max-width: 768px) { /* Adjust the breakpoint (768px) as needed */
+    .nav {
+        top: 150px; /* Adjust as needed */
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px; /* Vertical space between items */
+    }
+
+    .nav-link:last-child {
+        margin-bottom: 0; /* Remove margin for the last item */
+    }
+}
